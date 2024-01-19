@@ -7,7 +7,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddOpenTelemetry()
     .WithMetrics(builder => builder
-        .AddMeter("MeterName")
+        .AddMeter("Aums.Metric")
         .AddPrometheusExporter());
 builder.Services.AddHostedService<VersionService>();
 

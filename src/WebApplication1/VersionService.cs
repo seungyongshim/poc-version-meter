@@ -5,14 +5,12 @@ public class VersionService : IHostedService, IDisposable
 {
     private bool disposedValue;
 
-    public Meter meter { get; init; } = new("MeterName", "1.0.0");
+    public Meter meter { get; init; } = new("Aums.Metric", "1.0.0");
     public Task StartAsync(CancellationToken cancellationToken)
     {
-        
         var hatsSold = meter.CreateCounter<long>(
-            name: "hats-sold",
-            unit: "Hats",
-            description: "The number of hats sold in our store");
+            name: "application.version",
+            description: "application version");
         hatsSold.Add(1, [new("version", "1.0.0")]);
 
         return Task.CompletedTask;
