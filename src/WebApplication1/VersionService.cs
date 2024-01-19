@@ -1,5 +1,7 @@
-
+namespace WebApplication1;
 using System.Diagnostics.Metrics;
+
+
 
 public class VersionService(IMeterFactory meterFactory) : IHostedService
 {
