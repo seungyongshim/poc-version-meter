@@ -5,7 +5,6 @@ using System.Diagnostics.Metrics;
 
 public class VersionService(IMeterFactory meterFactory) : IHostedService
 {
-
     public Meter Meter { get; init; } = meterFactory.Create("Aums.Metric");
     public Task StartAsync(CancellationToken cancellationToken)
     {
